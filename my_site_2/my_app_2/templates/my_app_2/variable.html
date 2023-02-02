@@ -9,7 +9,18 @@
 <body>
     <h1>Variable</h1>
     <h2>{{name | lower | capfirst}} {{surname | upper}}</h2>
-    <h3>{{list.0}}, {{list.1}}, {{list.2}}</h3>
-    <h4>{{dict.inside_key}}</h4>
+    <ul>
+        {% for item in list %}
+            {% if item == 1 %}
+                <li>ONE</li>
+            {% else %}
+                <li>{{item}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% if user_logged_in %}
+        <h2>You are logged in, {{name | lower | capfirst}}</h2>
+    {% endif %}
+    <h2><a href="{% url 'my_app_2:example' %}">To example</a></h2>
 </body>
 </html>
