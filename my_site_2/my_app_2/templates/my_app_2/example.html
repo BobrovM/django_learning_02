@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
 <h2>This is inside example.html</h2>
 <h2><a href="{% url 'my_app_2:variable' %}">To variable</a></h2>
+<img src="{% static 'my_app_2/Python_logo.png'%}" alt="image">
 
 {% endblock content %}
 
